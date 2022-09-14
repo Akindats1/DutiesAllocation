@@ -1,0 +1,15 @@
+C:\Users\user\Desktop\DutiesAllocationApp\obj\Debug\net6.0\DutiesAllocationApp.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\DutiesAllocationApp\obj\Debug\net6.0\DutiesAllocationApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\DutiesAllocationApp\obj\Debug\net6.0\DutiesAllocationApp.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\DutiesAllocationApp\obj\Debug\net6.0\DutiesAllocationApp.AssemblyInfo.cs
+C:\Users\user\Desktop\DutiesAllocationApp\obj\Debug\net6.0\DutiesAllocationApp.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\DutiesAllocationApp\bin\Debug\net6.0\DutiesAllocationApp.exe
+C:\Users\user\Desktop\DutiesAllocationApp\bin\Debug\net6.0\DutiesAllocationApp.deps.json
+C:\Users\user\Desktop\DutiesAllocationApp\bin\Debug\net6.0\DutiesAllocationApp.runtimeconfig.json
+C:\Users\user\Desktop\DutiesAllocationApp\bin\Debug\net6.0\DutiesAllocationApp.dll
+C:\Users\user\Desktop\DutiesAllocationApp\bin\Debug\net6.0\DutiesAllocationApp.pdb
+C:\Users\user\Desktop\DutiesAllocationApp\obj\Debug\net6.0\DutiesAllocationApp.dll
+C:\Users\user\Desktop\DutiesAllocationApp\obj\Debug\net6.0\refint\DutiesAllocationApp.dll
+C:\Users\user\Desktop\DutiesAllocationApp\obj\Debug\net6.0\DutiesAllocationApp.pdb
+C:\Users\user\Desktop\DutiesAllocationApp\obj\Debug\net6.0\DutiesAllocationApp.genruntimeconfig.cache
+C:\Users\user\Desktop\DutiesAllocationApp\obj\Debug\net6.0\ref\DutiesAllocationApp.dll
