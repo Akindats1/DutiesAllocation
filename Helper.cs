@@ -17,6 +17,10 @@ namespace DutiesAllocationApp
             kitchen.Add("Adelakun Abdullateef");
             kitchen.Add("Haruna Habeebullah");
             kitchen.Add("Mahmud Ahmad AbdulWaheed");
+            kitchen.Add("Jubreel Faranas");
+            kitchen.Add("Oyekola Hafsah-Qaanitah");
+            kitchen.Add("Hamzah Fawazah");
+            kitchen.Add("Lukman Zainab");
 
             int i = 0;
             
@@ -67,6 +71,10 @@ namespace DutiesAllocationApp
 
             dinning.Add("Akintola AbdulHaseeb");
             dinning.Add("Intisor AbdulAwwal");
+            dinning.Add("Adeoye Aaishah");
+            dinning.Add("Timehin Hameedah");
+            dinning.Add("Bello Fateemah");
+            
 
             int i = 1;
             
@@ -118,6 +126,24 @@ namespace DutiesAllocationApp
             string worker = $"{++i}.Sultan AbdulSalam";
 
             return worker;
+        }
+
+
+        public static void Supervision()
+        {
+            List<string> supervisor = new List<string>();
+
+            supervisor.Add("Bello AbdulRasheed");
+            supervisor.Add("Bamgbose Balikiss");
+
+            
+            int i = 1;
+            
+            foreach (var item in supervisor)
+            {
+                Console.WriteLine($"{i++}.{item}");
+            }
+
         }
 
         
