@@ -8,114 +8,132 @@ namespace DutiesAllocationApp
     public static class Helper
     {
         
-        public static void KitchenAllocation()
+        public static string KitchenAllocation()
         {
             List<string> kitchen = new List<string>();
 
             kitchen.Add("Lukman AbdulMalik");
-            kitchen.Add("Haruna AbdulMalik");
-            kitchen.Add("Adelakun Abdullateef");
+            kitchen.Add("Ismail Abdulwarith");
+            kitchen.Add("Intisor AbdulAwwal");
             kitchen.Add("Haruna Habeebullah");
-            kitchen.Add("Mahmud Ahmad AbdulWaheed");
-            kitchen.Add("Jubreel Faranas");
-            kitchen.Add("Oyekola Hafsah-Qaanitah");
-            kitchen.Add("Hamzah Fawazah");
-            kitchen.Add("Lukman Zainab");
-
+            kitchen.Add("Elias Bashirudeen");
+            kitchen.Add("Adeoye Aaishah");
+            kitchen.Add("Bello Fateemah");
+            kitchen.Add("Timehin Hameedah");
+            
             int i = 0;
+            string result = "";
             
             foreach (var item in kitchen)
             {
-                Console.WriteLine($"{++i}.{item}");
+                result += $"{++i}.{item}\n";
             }
+            return result;
         }
 
 
-        public static void Classroom()
+        public static string Classroom()
         {
             List<string> classroom = new List<string>();
 
             classroom.Add("Oni Bashir Muhammad Bashir");
-            classroom.Add("Ismail Abdulwarith");
+            classroom.Add("Haruna AbdulMalik");
 
-             int i = 1;
+            int i = 1;
+            string result = "";
+            
             
             foreach (var item in classroom)
             {
-                Console.WriteLine($"{i++}.{item}");
+                result += $"{i++}.{item}\n";
             }
+
+            return result;
 
 
         }
 
 
-        public static void AllcorridorsAndStaircase()
+        public static string AllcorridorsAndStaircase()
         {
             List<string> corridor = new List<string>();
 
             corridor.Add("Adeniran Munzir");
-            corridor.Add("Elias Bashirudeen");
+            corridor.Add("Mahmud Ahmad AbdulWaheed");
 
             int i = 0;
+            string result = "";
             
             foreach (var item in corridor)
             {
-                Console.WriteLine($"{++i}.{item}");
+                result += $"{++i}.{item}\n";
             }
+            return result;
         }
 
 
-        public static void Dinning()
+        public static string Dinning()
         {
             List<string> dinning = new List<string>();
 
             dinning.Add("Akintola AbdulHaseeb");
-            dinning.Add("Intisor AbdulAwwal");
-            dinning.Add("Adeoye Aaishah");
-            dinning.Add("Timehin Hameedah");
-            dinning.Add("Bello Fateemah");
+            dinning.Add("Adelakun Abdullateef");
+            dinning.Add("Jubreel Faranas");
+            dinning.Add("Hamzah Fawazah");
+            dinning.Add("Oyekola Hafsah-Qaanitah");
+            dinning.Add("Lukman Zainab");
             
 
             int i = 1;
+            string result = "";
+            
             
             foreach (var item in dinning)
             {
-                Console.WriteLine($"{i++}.{item}");
+                result += $"{i++}.{item}\n";
             }
+            return result;
         }
 
 
-        public static void Toilet()
+        public static string Toilet()
         {
             List<string> toilet = new List<string>();
 
-            toilet.Add("Oluwa Muhammad");
-            toilet.Add("AbdurRaheem AbdulBarr");
+            toilet.Add("Alabi Abdulsamad");
+            toilet.Add("Lawal AbdulRahman");
 
             int i = 0;
+            string result = "";
+            
             
             foreach (var item in toilet)
             {
-                Console.WriteLine($"{++i}.{item}");
+                result += $"{++i}.{item}\n";
             }
+            return result;
         }
 
 
 
         
-        public static void Surroundings()
+        public static string Surroundings()
         {
             List<string> surrounding = new List<string>();
 
-            surrounding.Add("Lawal AbdulRahman");
-            surrounding.Add("Alabi Abdulsamad");
+            
+            surrounding.Add("Oluwa Muhammad");
+            surrounding.Add("AbdurRaheem AbdulBarr");
 
             int i = 0;
+            string result = "";
             
             foreach (var item in surrounding)
             {
-                Console.WriteLine($"{++i}.{item}");
+                result +=  $"{++i}.{item}\n";
             }
+
+            return result;    
         }
 
 
@@ -129,7 +147,7 @@ namespace DutiesAllocationApp
         }
 
 
-        public static void Supervision()
+        public static string Supervision()
         {
             List<string> supervisor = new List<string>();
 
@@ -138,13 +156,14 @@ namespace DutiesAllocationApp
 
             
             int i = 1;
+            string result = "";
             
             foreach (var item in supervisor)
             {
-                Console.WriteLine($"{i++}.{item}");
+                result += $"{i++}.{item}\n";
             }
-
-        }
+            return result;
+         }
 
         
         
