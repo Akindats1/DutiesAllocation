@@ -5,7 +5,7 @@ using DutiesAllocationApp.Shared;
 using DutiesAllocationApp.Enums;
 using DutiesAllocationApp.Repository;
 
-Console.WriteLine("==================Welcome MGQS Duty App===============");
+Console.WriteLine("==================Welcome MGQS Duty App (File Base System)===============");
 
 Menu menu = new Menu();
 

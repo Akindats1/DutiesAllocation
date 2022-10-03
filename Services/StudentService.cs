@@ -36,7 +36,7 @@ namespace DutiesAllocationApp.Services
             request.Phone = Console.ReadLine();
             request.Password = request.LastName;
 
-            int duty = Helper.SelectEnum("Enter student duty: \nEnter 1 for Admin\nEnter 2 for Dinning\nEnter 3 for Kitchen\nEnter 4 for Surrounding\n Enter 5 for Toilet\nEnter 6 for SadrofficeAndMosque\nEnter 7 for Classroom\nEnter 8 for CorridorAndStaircase\n Enter 9 for Supervision : ", 1, 9);
+            int duty = Helper.SelectEnum("Enter student duty: \nEnter 1 for Admin\nEnter 2 for Dinning\nEnter 3 for Kitchen\nEnter 4 for Surrounding\nEnter 5 for Toilet\nEnter 6 for SadrofficeAndMosque\nEnter 7 for Classroom\nEnter 8 for CorridorAndStaircase\nEnter 9 for Supervision : ", 1, 9);
             request.Duty = (Duty)duty;
 
             int gender = Helper.SelectEnum("Enter student gender:\nEnter 1 for Male\nEnter 2 for Female\nEnter 3 for RatherNotSay: ", 1, 3);
@@ -267,7 +267,7 @@ namespace DutiesAllocationApp.Services
 
 
             };
-            // StudentRepository.students.Add(e);
+            StudentRepository.students.Add(e);
             studentRepository.WriteToFile(e);
         }
 

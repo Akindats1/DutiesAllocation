@@ -23,7 +23,7 @@ namespace DutiesAllocationApp
 
         public static Student ToStudent(string str)
         {
-            var studentStr = str.Split("/t");
+            var studentStr = str.Split("\t");
 
             var student = new Student
             {
@@ -35,7 +35,7 @@ namespace DutiesAllocationApp
                 Duty = Enum.Parse<Duty>(studentStr[5]),
                 Phone = studentStr[6],
                 Password = studentStr[7],
-                Date = DateTime.Parse(studentStr[8])
+                Date = DateTime.Parse(studentStr[8]),
 
             };
             return student;
