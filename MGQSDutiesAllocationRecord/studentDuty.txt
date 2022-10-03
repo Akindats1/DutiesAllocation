@@ -18,3 +18,5 @@
 18	MGQS-0018	Mahumud Ahmad 	Abdulwaheed	Male	Toilet		Abdulwaheed	10/3/2022 8:46:04 PM
 19	MGQS-0019	Munzir	Adeniran	Male	Kitchen		Adeniran	10/3/2022 8:47:33 PM
 20	MGQS-0020	Abdulmalik	Lukman	Male	Kitchen		Lukman	10/3/2022 8:48:40 PM
+21	MGQS-0021	Balikiss	Bamgbose	Female	Supervision		Bamgbose	10/3/2022 8:56:18 PM
+22	MGQS-0022	Abdulhaseeb	Akintola	Male	Dinning		Akintola	10/3/2022 9:19:54 PM

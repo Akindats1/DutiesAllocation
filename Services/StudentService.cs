@@ -180,7 +180,7 @@ namespace DutiesAllocationApp.Services
 
         public void PrintListView(Student student)
         {
-            Console.WriteLine($"Student Code: {student.Code}\tFullname: {student.LastName} {student.FirstName}\tGender: {student.Gender}\tDuty: {student.Duty}...");
+            Console.WriteLine($"Student Code: {student.Code}\tFullname: {student.LastName} {student.FirstName}\tGender: {student.Gender}\tDuty: {student.Duty} ...");
         }
 
         public void PrintDetailView(Student student)

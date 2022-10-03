@@ -10,7 +10,7 @@ namespace DutiesAllocationApp.Enums
         SadrofficeAndMosque,
         Classroom,
         CorridorAndStaircase,
-        SuperVision
+        Supervision
 
     }
 }
