@@ -1,24 +1,18 @@
-using System;
-using System.Collections.Generic;
 using DutiesAllocationApp.Enums;
 
-namespace DutiesAllocationApp
+namespace DutiesAllocationApp.Entities
 {
-    public class Student
+    public class Student : BaseEntity
     {
-        public int Id { get; set; }
         public string Code { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public Gender Gender { get; set; }
-        public Duty Duty{ get; set; }
         public string Phone { get; set; }
-        public string Password { get; set; }
-        public DateTime Date { get; set; }
 
         public override string ToString()
         {
-            return $"{Id}\t{Code}\t{FirstName}\t{LastName}\t{Gender}\t{Duty}\t{Phone}\t{Password}\t{Date}";
+            return $"{Id}\t{Code}\t{FirstName}\t{LastName}\t{Gender}\t{Phone}\t{CreatedAt}\t{ModifiedAt}";
         }
 
         public static Student ToStudent(string str)
@@ -32,16 +26,12 @@ namespace DutiesAllocationApp
                 FirstName = studentStr[2],
                 LastName = studentStr[3],
                 Gender = Enum.Parse<Gender>(studentStr[4]),
-                Duty = Enum.Parse<Duty>(studentStr[5]),
-                Phone = studentStr[6],
-                Password = studentStr[7],
-                Date = DateTime.Parse(studentStr[8]),
-
+                Phone = studentStr[5],
+                CreatedAt = DateTime.Parse(studentStr[6]),
+                ModifiedAt = DateTime.Parse(studentStr[7]),
             };
+
             return student;
         }
-        
-    
-
     }
 }

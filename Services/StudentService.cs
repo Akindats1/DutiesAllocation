@@ -1,10 +1,8 @@
+using DutiesAllocation.Entities.Dto;
 using DutiesAllocationApp.Entities;
 using DutiesAllocationApp.Enums;
 using DutiesAllocationApp.Repository;
 using DutiesAllocationApp.Shared;
-
-
-using System;
 
 
 namespace DutiesAllocationApp.Services
@@ -34,10 +32,6 @@ namespace DutiesAllocationApp.Services
             
             Console.Write("Enter student phone number: ");
             request.Phone = Console.ReadLine();
-            request.Password = request.LastName;
-
-            int duty = Helper.SelectEnum("Enter student duty: \nEnter 1 for Admin\nEnter 2 for Dinning\nEnter 3 for Kitchen\nEnter 4 for Surrounding\nEnter 5 for Toilet\nEnter 6 for SadrofficeAndMosque\nEnter 7 for Classroom\nEnter 8 for CorridorAndStaircase\nEnter 9 for Supervision : ", 1, 9);
-            request.Duty = (Duty)duty;
 
             int gender = Helper.SelectEnum("Enter student gender:\nEnter 1 for Male\nEnter 2 for Female\nEnter 3 for RatherNotSay: ", 1, 3);
             request.Gender = (Gender)gender;
@@ -49,10 +43,8 @@ namespace DutiesAllocationApp.Services
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 Phone = request.Phone,
-                Password = request.Password,
-                Duty = request.Duty,
                 Gender = request.Gender,
-                Date = date
+                CreatedAt = DateTime.UtcNow
             };
 
             var findStudent = studentRepository.GetByIdOrCode(student.Id, student.Code);
@@ -82,11 +74,6 @@ namespace DutiesAllocationApp.Services
             Console.Write("Enter student phone: ");
             updateStudentDto.Phone = Console.ReadLine();
 
-            
-
-            int newDuty = Helper.SelectEnum("Enter student duty: \nEnter 1 for Admin\nEnter 2 for Dinning\nEnter 3 for Kitchen\nEnter 4 for Surrounding\nEnter 5 for Toilet\nEnter 6 for SadrofficeAndMosque\nEnter 7 for Classroom\nEnter 8 for CorridorAndStaircase\n Enter 9 for Supervision : ", 1, 9);
-            updateStudentDto.Duty = (Duty)newDuty;
-
             int newGender = Helper.SelectEnum("Enter student gender: \nEnter 1 for Male\nEnter 2 for Female\nEnter 3for RatherNotSay: ", 1, 3);
             updateStudentDto.Gender = (Gender)newGender;
 
@@ -95,14 +82,7 @@ namespace DutiesAllocationApp.Services
                 student.FirstName = updateStudentDto.FirstName;
                 student.LastName = updateStudentDto.LastName;
                 student.Gender = updateStudentDto.Gender;
-                student.Duty = updateStudentDto.Duty;
                 student.Phone = updateStudentDto.Phone;
-                
-
-                if(student.Id == 1)
-                {
-                    student.Duty = Duty.Admin;
-                }
 
                 studentRepository.RefreshFile();
 
@@ -113,41 +93,6 @@ namespace DutiesAllocationApp.Services
                 Console.WriteLine($"Student not found!");
             }
         }
-
-        public void Update(string code, UpdateStudentDto updateStudentDto)
-        {
-            var student = studentRepository.GetByCode(code);
-
-            Console.Write("Enter student firstname: ");
-            updateStudentDto.FirstName = Console.ReadLine();
-
-            Console.Write("Enter student lastname: ");
-            updateStudentDto.LastName = Console.ReadLine();
-
-            Console.Write("Enter student phone: ");
-            updateStudentDto.Phone = Console.ReadLine();
-
-            
-
-            if (student != null)
-            {
-                student.FirstName = updateStudentDto.FirstName;
-                student.LastName = updateStudentDto.LastName;
-                student.Phone = updateStudentDto.Phone;
-               
-
-                studentRepository.RefreshFile();
-
-                Console.WriteLine("Record updated successfully!");
-            }
-            else
-            {
-                Console.WriteLine("An error occured!");
-            }
-        }
-
-        
-
 
         public void Delete(int id)
         {
@@ -180,12 +125,12 @@ namespace DutiesAllocationApp.Services
 
         public void PrintListView(Student student)
         {
-            Console.WriteLine($"Student Code: {student.Code}\tFullname: {student.LastName} {student.FirstName}\tGender: {student.Gender}\tDuty: {student.Duty} ...");
+            Console.WriteLine($"Student Code: {student.Code}\tFullname: {student.LastName} {student.FirstName}\tGender: {student.Gender}");
         }
 
         public void PrintDetailView(Student student)
         {
-            Console.WriteLine($"Code: {student.Code}\nFullname: {student.LastName} {student.FirstName}\nPhone: {student.Phone}\nDuty: {student.Duty}\nGender: {student.Gender}\nDate: {student.Date}");
+            Console.WriteLine($"Code: {student.Code}\nFullname: {student.LastName} {student.FirstName}\nPhone: {student.Phone}\nGender: {student.Gender}\nDate: {student.CreatedAt}");
         }
 
         public void GetAll()
@@ -211,66 +156,6 @@ namespace DutiesAllocationApp.Services
                 Console.WriteLine("Student not found!");
             }
         }
-
-        public void ChangePassword(string code, string oldPassword, string newPassword, string confirmPassword)
-        {
-            var student = studentRepository.GetByCode(code);
-
-            if (student == null)
-            {
-               Console.WriteLine($"Student with the code: {code} not found");
-               return;
-            }
-
-            if (student.Password != oldPassword)
-            {
-               Console.WriteLine("Invalid code or password!");
-               return;
-            }
-            if(newPassword !=  confirmPassword)
-            {
-                Console.WriteLine("Password mismatch");
-                return;
-            }
-
-            student.Password = newPassword;
-            studentRepository.RefreshFile();
-            Console.WriteLine("You successfully changed your password!");
-        }
-
-        public Student Login(string code, string password)
-        {
-            var student = studentRepository.GetByCode(code);
-
-            if (student != null && student.Password == password)
-            {
-                return student;
-            }
-
-            return null;
-        }
-
-        public void AddAdminRecord()
-        {
-            var e = new Student
-            {
-                Id = 1,
-                Code = Helper.GenerateCode(1),
-                FirstName = "Abdulrasheed",
-                LastName = "Bello",
-                Password = "admin",
-                Phone = "09074866640",
-                Gender = Gender.Male,
-                Duty = Duty.Admin,
-                Date = DateTime.Now
-
-
-
-            };
-            StudentRepository.students.Add(e);
-            studentRepository.WriteToFile(e);
-        }
-
         
     }
 }
