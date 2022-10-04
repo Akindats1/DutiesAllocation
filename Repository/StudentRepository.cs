@@ -30,7 +30,9 @@ namespace DutiesAllocationApp.Repository
                     Directory.CreateDirectory(dir);
                     var fileName = Constants.fileName;
                     var fullPath = Path.Combine(dir, fileName);
-                    using(File.Create(fullPath));
+                    using(File.Create(fullPath))
+                    {
+                    }
                 }
             }
             catch(Exception ex)
