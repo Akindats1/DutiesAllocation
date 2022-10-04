@@ -1,11 +1,4 @@
-using System;
-using System.IO;
-using System.Collections.Generic;
-using DutiesAllocationApp.Enums;
 using DutiesAllocationApp.Entities;
-using DutiesAllocationApp.Shared;
-
-
 
 namespace DutiesAllocationApp.Repository
 {
@@ -39,7 +32,6 @@ namespace DutiesAllocationApp.Repository
                     var fullPath = Path.Combine(dir, fileName);
                     using(File.Create(fullPath));
                 }
-               
             }
             catch(Exception ex)
             {
@@ -100,9 +92,6 @@ namespace DutiesAllocationApp.Repository
                 Console.WriteLine(ex.Message);
             }
         }
-
-
-
 
     }
 }
