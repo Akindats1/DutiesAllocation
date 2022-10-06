@@ -13,5 +13,6 @@ namespace DutiesAllocationApp.Services
         void Delete(int id);
         void PrintListView(Student student);
         void PrintDetailView(Student student);
+        void AssignDutyToStudent(int id);
     }
 }

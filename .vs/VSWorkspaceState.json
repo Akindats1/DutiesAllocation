@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Menus",
+    "\\Repository",
+    "\\Services"
   ],
-  "SelectedNode": "\\C:\\Users\\user\\Desktop\\DutiesAllocationApp",
+  "SelectedNode": "\\DutiesAllocationApp.csproj",
   "PreviewInSolutionExplorer": false
 }

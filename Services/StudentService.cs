@@ -22,7 +22,7 @@ namespace DutiesAllocationApp.Services
 
             int id = (students.Count != 0) ? students[students.Count - 1].Id + 1 : 1;
             string code = Helper.GenerateCode(id);
-            DateTime date = DateTime.Now;
+           
 
             Console.Write("Enter student firstname: ");
             request.FirstName = Console.ReadLine();
@@ -156,6 +156,10 @@ namespace DutiesAllocationApp.Services
                 Console.WriteLine("Student not found!");
             }
         }
-        
+
+        public void AssignDutyToStudent(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

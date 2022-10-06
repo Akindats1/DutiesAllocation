@@ -8,9 +8,16 @@ namespace DutiesAllocationApp.Shared
     {
         public static string GenerateCode(int id)
         {
-            Random rnd = new Random();
+            
 
             return $"MGQS-{id.ToString("0000")}";
+        }
+
+        public static string GenerateCode(char Dutyid)
+        {
+
+            return $"Duty-{Dutyid.ToString()}";
+
         }
 
 
