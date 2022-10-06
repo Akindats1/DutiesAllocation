@@ -1,8 +1,7 @@
 using DutiesAllocation.Entities.Dto;
 using DutiesAllocationApp.Entities;
 
-
-namespace DutiesAllocationApp.Services
+namespace DutiesAllocationApp.Services.Contracts
 {
     public interface IStudentService
     {
@@ -13,5 +12,6 @@ namespace DutiesAllocationApp.Services
         void Delete(int id);
         void PrintListView(Student student);
         void PrintDetailView(Student student);
+        void AssignDutyToStudent(int dutyId, int studentId);
     }
 }

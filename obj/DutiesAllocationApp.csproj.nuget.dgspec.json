@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin\\desktop\\DutiesAllocation\\DutiesAllocationApp.csproj": {}
+    "C:\\Users\\admin\\Desktop\\DutiesAllocation\\DutiesAllocationApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\desktop\\DutiesAllocation\\DutiesAllocationApp.csproj": {
+    "C:\\Users\\admin\\Desktop\\DutiesAllocation\\DutiesAllocationApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\desktop\\DutiesAllocation\\DutiesAllocationApp.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\Desktop\\DutiesAllocation\\DutiesAllocationApp.csproj",
         "projectName": "DutiesAllocationApp",
-        "projectPath": "C:\\Users\\admin\\desktop\\DutiesAllocation\\DutiesAllocationApp.csproj",
+        "projectPath": "C:\\Users\\admin\\Desktop\\DutiesAllocation\\DutiesAllocationApp.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\desktop\\DutiesAllocation\\obj\\",
+        "outputPath": "C:\\Users\\admin\\Desktop\\DutiesAllocation\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

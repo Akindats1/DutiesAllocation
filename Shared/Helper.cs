@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using DutiesAllocationApp.Entities;
-
 namespace DutiesAllocationApp.Shared
 {
     public static class Helper
@@ -28,8 +24,5 @@ namespace DutiesAllocationApp.Shared
         {
             return outValue >= start && outValue <= end;
         }
-    
     }
-
-    
 }

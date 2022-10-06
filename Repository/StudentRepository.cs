@@ -1,4 +1,6 @@
+using DutiesAllocation.Repository;
 using DutiesAllocationApp.Entities;
+using DutiesAllocationApp.Repository.Contracts;
 
 namespace DutiesAllocationApp.Repository
 {
@@ -7,44 +9,8 @@ namespace DutiesAllocationApp.Repository
         public static List<Student> students;
         public StudentRepository()
         {
-            ReadFromFile();
-        }
-
-        private void ReadFromFile()
-        {
             students = new List<Student>();
-            try
-            {
-                if(File.Exists(Constants.fullPath))
-                {
-                    var lines = File.ReadAllLines(Constants.fullPath);
-                    foreach (var line in lines)
-                    {
-                        var student = Student.ToStudent(line);
-                        students.Add(student);
-                    }
-                }
-                else
-                {
-                    var dir = Constants.dir;
-                    Directory.CreateDirectory(dir);
-                    var fileName = Constants.fileName;
-                    var fullPath = Path.Combine(dir, fileName);
-                    using(File.Create(fullPath))
-                    {
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-
- 
-        public List<Student> GetAll()
-        {
-            return students;
+            ReadFromFile();
         }
 
         public Student GetByCode(string code)
@@ -57,18 +23,26 @@ namespace DutiesAllocationApp.Repository
             return students.Find(i => i.Id == id);
         }
 
-        public Student GetByIdOrCode(int id,string code)
+        public Student GetByIdOrCode(int id, string code)
         {
             return students.Find(i => i.Id == id || i.Code == code);
         }
 
-        public void WriteToFile(Student student)
+        public List<Student> GetAll()
+        {
+            return students;
+        }
+
+        public void RefreshFile()
         {
             try
             {
-                using(StreamWriter writer = new StreamWriter(Constants.fullPath, true))
+                using (StreamWriter writer = new StreamWriter(Constants.studentFilePath))
                 {
-                    writer.WriteLine(student.ToString());
+                    foreach (var student in students)
+                    {
+                        writer.WriteLine(student.ToString());
+                    }
                 }
             }
             catch (Exception ex)
@@ -77,15 +51,42 @@ namespace DutiesAllocationApp.Repository
             }
         }
 
-        public void RefreshFile()
+        public void WriteToFile(Student entity)
         {
             try
             {
-                using(StreamWriter writer = new StreamWriter(Constants.fullPath))
+                using (StreamWriter writer = new StreamWriter(Constants.studentFilePath, true))
                 {
-                    foreach(var student in students)
+                    writer.WriteLine(entity.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void ReadFromFile()
+        {
+            try
+            {
+                if (File.Exists(Constants.studentFilePath))
+                {
+                    var lines = File.ReadAllLines(Constants.studentFilePath);
+                    foreach (var line in lines)
                     {
-                        writer.WriteLine(student.ToString());
+                        var student = Student.ToStudent(line);
+                        students.Add(student);
+                    }
+                }
+                else
+                {
+                    var dir = Constants.dir;
+                    Directory.CreateDirectory(dir);
+                    var fileName = Constants.studentFile;
+                    var fullPath = Path.Combine(dir, fileName);
+                    using (File.Create(fullPath))
+                    {
                     }
                 }
             }
