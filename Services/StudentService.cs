@@ -174,22 +174,6 @@ namespace DutiesAllocationApp.Services
                 Console.WriteLine("Student not found!");
             }
         }
-
-
-        public void AssignDutyToStudent(int dutyId, int studentId)
-        {
-            var duty = dutyRepository.GetById(dutyId);
-            var student = studentRepository.GetById(studentId);
-
-            if (duty == null || student == null)
-            {
-                Console.WriteLine("Student or duty does not exist!");
-            }
-            else
-            {
-                Console.WriteLine($"{student.FirstName} {student.LastName} assigned {duty.DutyName} duty");
-            }
-        }
-
+        
     }
 }
