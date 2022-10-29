@@ -7,5 +7,9 @@ namespace DutiesAllocationApp
         public static string studentFilePath = Path.Combine(dir, studentFile);
         public const string dutyNameFile = "dutylist.txt";
         public static string dutyFilePath = Path.Combine(dir, dutyNameFile);
+        public const string dutyAssignmentFile = "dutyAssignment.txt";
+        public static string dutyAssignmentFilePath = Path.Combine(dir, dutyAssignmentFile);
+
+
     }
 }

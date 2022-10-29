@@ -7,7 +7,6 @@ using DutiesAllocationApp.Repository.Contracts;
 using DutiesAllocationApp.Services.Contracts;
 using DutiesAllocationApp.Shared;
 
-
 namespace DutiesAllocationApp.Services
 {
     public class StudentService : IStudentService
@@ -54,11 +53,13 @@ namespace DutiesAllocationApp.Services
 
             var findStudent = studentRepository.GetByIdOrCode(student.Id, student.Code);
 
+
             if (findStudent == null)
             {
                 students.Add(student);
                 studentRepository.WriteToFile(student);
                 Console.WriteLine($"New student with code \"{student.Code}\" created successfully!");
+
             }
             else
             {
@@ -110,6 +111,7 @@ namespace DutiesAllocationApp.Services
                 if (student == null)
                 {
                     Console.WriteLine($"Student with the id: {id} not found");
+                    return;
                 }
 
                 students.Remove(student);
@@ -160,7 +162,6 @@ namespace DutiesAllocationApp.Services
                 PrintListView(student);
             }
         }
-
         public void GetAStudent(int id)
         {
             var student = studentRepository.GetById(id);
@@ -168,12 +169,10 @@ namespace DutiesAllocationApp.Services
             if (student != null)
             {
                 PrintDetailView(student);
+                return;
             }
-            else
-            {
-                Console.WriteLine("Student not found!");
-            }
+            
+            Console.WriteLine("Student not found!");
         }
-        
     }
 }

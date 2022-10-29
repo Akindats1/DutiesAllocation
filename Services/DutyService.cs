@@ -22,7 +22,7 @@ namespace DutiesAllocationApp.Services
             int id = (duties.Count != 0) ? duties[duties.Count - 1].Id + 1 : 1;
 
             Console.Write("Enter duty name: ");
-            request.DutyName = Console.ReadLine();
+            request.DutyName = Console.ReadLine().Trim();
 
             Console.Write("Enter duty description (optional): ");
             request.Description = Console.ReadLine();

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Documents\\DutiesAllocation\\DutiesAllocationApp.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Videos\\DutiesAllocation\\DutiesAllocationApp.csproj",
       "projectName": "DutiesAllocationApp",
-      "projectPath": "C:\\Users\\user\\Documents\\DutiesAllocation\\DutiesAllocationApp.csproj",
+      "projectPath": "C:\\Users\\user\\Videos\\DutiesAllocation\\DutiesAllocationApp.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Documents\\DutiesAllocation\\obj\\",
+      "outputPath": "C:\\Users\\user\\Videos\\DutiesAllocation\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

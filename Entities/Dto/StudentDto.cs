@@ -1,3 +1,4 @@
+using DutiesAllocationApp.Entities;
 using DutiesAllocationApp.Enums;
 
 namespace DutiesAllocation.Entities.Dto
@@ -10,5 +11,6 @@ namespace DutiesAllocation.Entities.Dto
         public string LastName { get; set; }
         public Gender Gender { get; set; }
         public string Phone { get; set; }
+        
     }
 }

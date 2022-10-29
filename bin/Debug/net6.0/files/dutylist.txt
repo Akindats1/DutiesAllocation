@@ -1,1 +1,9 @@
-1	Mosque Cleaning	Clear all litter around the mosque and spread mat before calling the adhan	06/10/2022 20:58:35	06/10/2022 20:59:44
+1	Kitchen	Clean all kitchen utensils and take food to dinning	10/19/2022 9:17:28 AM	1/1/0001 12:00:00 AM
+2	Dinning	Serve food and make dinning room clean always.	10/19/2022 9:18:11 AM	1/1/0001 12:00:00 AM
+3	Corridors and staircases	Make sure all corridors and staircase are cleam	10/19/2022 9:19:20 AM	1/1/0001 12:00:00 AM
+4	Mosque preparation	Preparation of mosque for solat,by cleaning the mosque,spreading the mats and call to prayer.	10/19/2022 9:21:29 AM	1/1/0001 12:00:00 AM
+5	Surroundings	Clean the surroundings	10/19/2022 9:22:17 AM	1/1/0001 12:00:00 AM
+6	Sadr's office and gym	Clean the sadr's office and gym 	10/19/2022 9:23:03 AM	1/1/0001 12:00:00 AM
+9	Supervision 	Supervise all dutys	10/19/2022 9:25:39 AM	1/1/0001 12:00:00 AM
+10	Toilet	Clean the toilet and make sure water is available in the toilet.	10/19/2022 9:27:09 AM	1/1/0001 12:00:00 AM
+11	Classroom	Clean the classroom and arrange the class for lecture	10/21/2022 9:03:28 PM	1/1/0001 12:00:00 AM

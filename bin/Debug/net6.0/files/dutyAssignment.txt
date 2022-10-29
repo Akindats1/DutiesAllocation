@@ -1,0 +1,23 @@
+1	MGQS-0011	Abdulmalik Lukman	Kitchen	10/21/2022 3:38:19 PM	1/1/0001 12:00:00 AM
+2	MGQS-0012	Muhammad-Bashir Oni-Bashir	Kitchen	10/21/2022 3:39:03 PM	1/1/0001 12:00:00 AM
+3	MGQS-0013	Muhammad Munzir Adeniran	Kitchen	10/21/2022 3:39:31 PM	1/1/0001 12:00:00 AM
+4	MGQS-0017	Mahmud-Ahmad Abdul Waheed	Kitchen	10/21/2022 3:40:41 PM	1/1/0001 12:00:00 AM
+5	MGQS-0003	Faranas Jubreel	Kitchen	10/21/2022 3:41:28 PM	1/1/0001 12:00:00 AM
+6	MGQS-0005	Fawazah Hamzah	Kitchen	10/21/2022 3:42:42 PM	1/1/0001 12:00:00 AM
+7	MGQS-0007	Hafsah-Qaanitah Oyekola	Kitchen	10/21/2022 3:43:58 PM	1/1/0001 12:00:00 AM
+8	MGQS-0009	Zainab Lukman	Kitchen	10/21/2022 3:44:15 PM	1/1/0001 12:00:00 AM
+9	MGQS-0016	Abdul Haseeb Akintola	Dinning	10/21/2022 3:44:41 PM	1/1/0001 12:00:00 AM
+10	MGQS-0004	Aisha Adeoye	Dinning	10/21/2022 3:45:56 PM	1/1/0001 12:00:00 AM
+11	MGQS-0008	Fateemah Bello	Dinning	10/21/2022 3:46:13 PM	1/1/0001 12:00:00 AM
+12	MGQS-0006	Hameedah Timehin	Dinning	10/21/2022 3:46:24 PM	1/1/0001 12:00:00 AM
+14	MGQS-0020	Intisor Abdul Awwal	Surroundings	10/21/2022 3:47:03 PM	1/1/0001 12:00:00 AM
+15	MGQS-0019	Abdul Warith Ismail	Surroundings	10/21/2022 3:47:34 PM	1/1/0001 12:00:00 AM
+16	MGQS-0014	Bashirudeen Elias	Corridors and staircases	10/21/2022 3:48:04 PM	1/1/0001 12:00:00 AM
+17	MGQS-0023	Habeebullah Haruna	Corridors and staircases	10/21/2022 3:48:17 PM	1/1/0001 12:00:00 AM
+18	MGQS-0001	AbdulRasheed Bello	Supervision 	10/21/2022 3:53:22 PM	1/1/0001 12:00:00 AM
+19	MGQS-0002	Balikiss Bamgbose	Supervision 	10/21/2022 3:53:40 PM	1/1/0001 12:00:00 AM
+20	MGQS-0021	Haruna Malik	Toilet	10/21/2022 3:54:44 PM	1/1/0001 12:00:00 AM
+23	MGQS-0010	Muhammad Oluwa	Sadr's office and gym	10/21/2022 3:57:42 PM	1/1/0001 12:00:00 AM
+24	MGQS-0022	Sultan Abdul Salam	Mosque preparation	10/21/2022 4:41:33 PM	1/1/0001 12:00:00 AM
+25	MGQS-0018	Abdul Barr Abdur Raheem	Classroom	10/21/2022 9:05:13 PM	1/1/0001 12:00:00 AM
+26	MGQS-0015	Abdul Lateef Adelakun	Classroom	10/21/2022 9:05:31 PM	1/1/0001 12:00:00 AM

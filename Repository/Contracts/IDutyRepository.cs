@@ -8,5 +8,8 @@ namespace DutiesAllocationApp.Repository.Contracts
         List<Duty> GetAll();
         void WriteToFile(Duty entity);
         void RefreshFile();
+        List<string> StudentDuty();
+
+
     }
 }

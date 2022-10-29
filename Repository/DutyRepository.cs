@@ -7,9 +7,11 @@ namespace DutiesAllocation.Repository
     public class DutyRepository : IDutyRepository
     {
         public static List<Duty> duties;
+        public static List<string> dutyNames;
         public DutyRepository()
         {
             duties = new List<Duty>();
+            dutyNames = new List<string>();
             ReadFromFile();
         }
 
@@ -37,6 +39,11 @@ namespace DutiesAllocation.Repository
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        public List<string> StudentDuty()
+        {
+            return dutyNames;
         }
 
         public void WriteToFile(Duty entity)

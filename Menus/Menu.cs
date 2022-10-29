@@ -1,5 +1,6 @@
 using DutiesAllocation.Entities.Dto;
 using DutiesAllocationApp.Entities;
+using DutiesAllocationApp.Entities.Dto;
 using DutiesAllocationApp.Enums;
 using DutiesAllocationApp.Services;
 using DutiesAllocationApp.Services.Contracts;
@@ -15,6 +16,9 @@ namespace DutiesAllocationApp.Menus
         private static StudentDto studentDto;
         private static UpdateStudentDto updateStudentDto;
         private static DutyDto dutyDto;
+        private static DutyAssignmentDto dutyAssignmentDto;
+        private static IDutyAssignmentService dutyAssignmentService;
+
 
         public Menu()
         {
@@ -23,6 +27,8 @@ namespace DutiesAllocationApp.Menus
             updateStudentDto = new UpdateStudentDto();
             dutyService = new DutyService();
             dutyDto = new DutyDto();
+            dutyAssignmentDto = new DutyAssignmentDto(); 
+            dutyAssignmentService = new DutyAssignmentService();
         }
 
         public void MyMenu()
@@ -45,6 +51,9 @@ namespace DutiesAllocationApp.Menus
                         case "2":
                             DutyMenu();
                             break;
+                        case"3": 
+                            DutyAssignmentMenu();
+                            break ;
                         case "0":
                             flag = false;
                             Console.WriteLine("Thank you for using our App...");
@@ -81,40 +90,33 @@ namespace DutiesAllocationApp.Menus
                         break;
                     case "2":
                         Console.WriteLine("");
-                        Console.WriteLine("Enter duty id: ");
-                        int dutyId = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Enter student id: ");
-                        int studentId = int.Parse(Console.ReadLine());
-                        studentService.AssignDutyToStudent(dutyId, studentId);
+                        studentService.GetAll();
                         Console.WriteLine("");
                         break;
                     case "3":
                         Console.WriteLine("");
-                        studentService.GetAll();
-                        Console.WriteLine("");
-                        break;
-                    case "4":
-                        Console.WriteLine("");
-                        Console.Write("Enter the id of student to view: ");
+                        Console.WriteLine("Enter the id of the student to view");
                         int viewId = int.Parse(Console.ReadLine());
                         studentService.GetAStudent(viewId);
                         Console.WriteLine("");
                         break;
-                    case "5":
+
+                    case "4":
                         Console.WriteLine("");
                         Console.Write("Enter student Id to update: ");
                         int id = int.Parse(Console.ReadLine());
                         studentService.Update(id, updateStudentDto);
                         Console.WriteLine("");
                         break;
-                    case "6":
+                   
+                    case "5":
                         Console.WriteLine("");
                         Console.Write("Enter the id of student to delete: ");
                         int empId = int.Parse(Console.ReadLine());
                         studentService.Delete(empId);
                         Console.WriteLine("");
                         break;
-                    case "0":
+                  case "0":
                         flag = false;
                         break;
                     default:
@@ -170,21 +172,75 @@ namespace DutiesAllocationApp.Menus
             }
         }
 
+
+        public void DutyAssignmentMenu()
+        {
+            var flag = true;
+
+            while (flag)
+            {
+                PrintDutyAssignmentMenu();
+                Console.Write("\nPlease enter your option: ");
+                string option = Console.ReadLine();
+
+                switch (option)
+                {
+                    case "1":
+                        Console.WriteLine("");
+                        dutyAssignmentService.AssignDutyTostudent(dutyAssignmentDto);
+                        Console.WriteLine("");
+                        break;
+                    case "2":
+                        Console.WriteLine("");
+                        dutyAssignmentService.ViewAllDutyToStudent();
+                        Console.WriteLine("");
+                        break;
+                    case "3":
+                        Console.WriteLine("");
+                        Console.Write("Enter student code: ");
+                        string inputCode = Console.ReadLine();
+                        dutyAssignmentService.DeleteDutyToStudent(inputCode);
+                        Console.WriteLine("");
+                        break;
+                    case "4":
+                        Console.WriteLine("");
+                        Console.Write("Enter duty assignment id to update: ");
+                        int id = int.Parse(Console.ReadLine());
+                        dutyAssignmentService.UpdateDutyToStudent(id, dutyAssignmentDto);
+                        Console.WriteLine("");
+                        break;
+                    case "5":
+                        Console.WriteLine("");
+                        Console.Write("Enter the name of duty to view: ");
+                        string viewDuty = Console.ReadLine();
+                        dutyAssignmentService.ViewDutyToAStudent(viewDuty);
+                        Console.WriteLine("");
+                        break;
+                    case "0":
+                        flag = false;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid input!");
+                        break;
+                }
+            }
+        }
+
         public void PrintMenu()
         {
             Console.WriteLine("Enter 1 to view student menu.");
             Console.WriteLine("Enter 2 to view duty menu.");
+            Console.WriteLine("Enter 3 to view duty assignment menu.");
             Console.WriteLine("Enter 0 to exit.");
         }
 
         public void PrintStudentMenu()
         {
             Console.WriteLine("Enter 1 to add new Student.");
-            Console.WriteLine("Enter 2 to assign duty to Student.");
-            Console.WriteLine("Enter 3 to view all students.");
-            Console.WriteLine("Enter 4 to view a student.");
-            Console.WriteLine("Enter 5 to update a student.");
-            Console.WriteLine("Enter 6 to delete a student.");
+            Console.WriteLine("Enter 2 to view all students.");
+            Console.WriteLine("Enter 3 to view a student.");
+            Console.WriteLine("Enter 4 to update a student.");
+            Console.WriteLine("Enter 5 to delete a student.");
             Console.WriteLine("Enter 0 to go back to main menu.");
         }
 
@@ -195,6 +251,17 @@ namespace DutiesAllocationApp.Menus
             Console.WriteLine("Enter 3 to update duty.");
             Console.WriteLine("Enter 4 to delete duty.");
             Console.WriteLine("Enter 0 to go back to main menu.");
+        }
+
+        public void PrintDutyAssignmentMenu()
+        {
+            Console.WriteLine("Enter 1 to assign duty to student");
+            Console.WriteLine("Enter 2 to view duties to students");
+            Console.WriteLine("Enter 3 to delete duty to student");
+            Console.WriteLine("Enter 4 to update duty to student");
+            Console.WriteLine("Enter 5 to view duty to student");
+            Console.WriteLine("Enter 0 to go back to the main menu");
+
         }
     }
 }
