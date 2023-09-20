@@ -1,4 +1,5 @@
-﻿using DutiesAllocation.Repository;
+﻿using ConsoleTables;
+using DutiesAllocation.Repository;
 using DutiesAllocationApp.Entities;
 using DutiesAllocationApp.Entities.Dto;
 using DutiesAllocationApp.Repository;
@@ -134,46 +135,37 @@ namespace DutiesAllocationApp.Services
         public void ViewAllDutyToStudent()
         {
             var duties = dutyAssignmentRepository.GetDutyAssignments();
-            foreach (var duty in duties)
+            var table = new ConsoleTable("Student Code", "Student Name", "Duty Name", "Created", "Modified");
+
+            if (duties.Count != 0)
             {
-                PrintView(duty);
+                foreach (var duty in duties)
+                {
+                    table.AddRow(duty.StudentCode, duty.StudentName, duty.DutyName, duty.CreatedAt, duty.ModifiedAt);
+                }
+
+                table.Write(Format.Alternative);
+                return;
             }
+            
         }
 
         public void ViewDutyToAStudent(string dutyName)
         {
             var dutyAssignment = dutyAssignmentRepository.GetAllDutyAssignments(dutyName);
+            var table = new ConsoleTable("Student Code", "Student Name", "Duty Name", "Created", "Modified");
 
             if (dutyAssignment != null)
             {
                 foreach (var duty in dutyAssignment)
                 {
-                    PrintView(duty);
+                    table.AddRow(duty.StudentCode, duty.StudentName, duty.DutyName, duty.CreatedAt, duty.ModifiedAt);
                 }
+
+                table.Write(Format.Default);
+                return;
             }
 
-        }
-
-        public void PrintView(DutyAssignment dutyAssignment)
-        {
-            var dateCreated = dutyAssignment.CreatedAt.ToShortDateString();
-            string dateModified = String.Empty;
-
-
-            if (dutyAssignment.ModifiedAt == new DateTime(0001, 01, 01))
-            {
-                dateModified += "Not modified yet";
-            }
-            else if (dutyAssignment.CreatedAt.ToShortDateString() == dutyAssignment.ModifiedAt.ToShortDateString())
-            {
-                dateModified += dutyAssignment.ModifiedAt.ToString("hh:mm tt");
-            }
-            else
-            {
-                dateModified += dutyAssignment.ModifiedAt.ToShortDateString();
-            }
-
-            Console.WriteLine($"Student Code:{dutyAssignment.StudentCode}\tStudent Name:{dutyAssignment.StudentName}\tDuty Name: {dutyAssignment.DutyName}\tCreated: {dateCreated}\tModified: {dateModified}");
         }
 
 

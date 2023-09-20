@@ -25,6 +25,11 @@ namespace DutiesAllocation.Repository
             return duties.Find(i => i.Id == id);
         }
 
+        public Duty GetByName(string name)
+        {
+            return duties.Find(n => n.DutyName == name);    
+        }
+
         public void RefreshFile()
         {
             try

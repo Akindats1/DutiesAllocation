@@ -10,7 +10,5 @@ namespace DutiesAllocationApp.Services.Contracts
         void DeleteDutyToStudent(string code);
         void ViewDutyToAStudent(string dutyName);
         void UpdateDutyToStudent(int dutyId,  DutyAssignmentDto studentCode);
-        void PrintView(DutyAssignment dutyAssignment);
-
     }
 }

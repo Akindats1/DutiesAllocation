@@ -1,5 +1,5 @@
+using ConsoleTables;
 using DutiesAllocation.Entities.Dto;
-using DutiesAllocation.Repository;
 using DutiesAllocationApp.Entities;
 using DutiesAllocationApp.Enums;
 using DutiesAllocationApp.Repository;
@@ -12,12 +12,11 @@ namespace DutiesAllocationApp.Services
     public class StudentService : IStudentService
     {
         private static IStudentRepository studentRepository;
-        private static IDutyRepository dutyRepository;
+
 
         public StudentService()
         {
             studentRepository = new StudentRepository();
-            dutyRepository = new DutyRepository();
         }
 
         public void Create(StudentDto request)
@@ -125,50 +124,32 @@ namespace DutiesAllocationApp.Services
             }
         }
 
-        public void PrintListView(Student student)
-        {
-            var dateCreated = student.CreatedAt.ToShortDateString();
-            string dateModified = String.Empty;
-
-            if (student.ModifiedAt == new DateTime(0001, 01, 01))
-            {
-                dateModified += "Not modified yet";
-            }
-            else if (student.CreatedAt.ToShortDateString() == student.ModifiedAt.ToShortDateString())
-            {
-                dateModified += student.ModifiedAt.ToString("hh:mm tt");
-            }
-            else
-            {
-                dateModified += student.ModifiedAt.ToShortDateString();
-            }
-
-            Console.WriteLine($"Student Code: {student.Code}\tFullname: {student.LastName} {student.FirstName}\tGender: {student.Gender}\tCreated: {dateCreated}\tModified: {dateModified}");
-        }
-
-        public void PrintDetailView(Student student)
-        {
-            var dateCreated = student.CreatedAt.ToShortDateString();
-            var dateModified = student.ModifiedAt != new DateTime(0001, 01, 01) ? student.ModifiedAt.ToShortDateString() : "Not modified yet";
-            Console.WriteLine($"Code: {student.Code}\nFullname: {student.LastName} {student.FirstName}\nPhone: {student.Phone}\nGender: {student.Gender}\nCreated: {dateCreated}\nModified: {dateModified}");
-        }
-
         public void GetAll()
         {
             var students = studentRepository.GetAll();
+            var table = new ConsoleTable("Student Code", "First Name", "Last Name","Gender", "Phone", "Created", "Modified");
 
-            foreach (var student in students)
+            if (students.Count  != 0)
             {
-                PrintListView(student);
+                foreach (var student in students)
+                {
+                    table.AddRow(student.Code, student.FirstName, student.LastName, student.Gender, student.Phone, student.CreatedAt, student.ModifiedAt);            
+                }
+                table.Write(Format.Alternative);
+                return;
             }
+
+          
         }
         public void GetAStudent(int id)
         {
             var student = studentRepository.GetById(id);
+            var table = new ConsoleTable("Student Code", "First Name", "Last Name", "Gender", "Phone", "Created", "Modified");
 
             if (student != null)
             {
-                PrintDetailView(student);
+                table.AddRow(student.Code, student.FirstName, student.LastName, student.Gender, student.Phone, student.CreatedAt, student.ModifiedAt);
+                table.Write(Format.MarkDown);
                 return;
             }
             

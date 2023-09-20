@@ -9,6 +9,6 @@ namespace DutiesAllocationApp.Services.Contracts
         void GetAll();
         void Update(int id, DutyDto request);
         void Delete(int id);
-        void PrintListView(Duty student);
+        void GetDuty(string dutyname);
     }
 }

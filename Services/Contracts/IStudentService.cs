@@ -9,8 +9,6 @@ namespace DutiesAllocationApp.Services.Contracts
         void GetAll();
         void Update(int id, UpdateStudentDto updateStudentDto);
         void Delete(int id);
-        void PrintListView(Student student);
-        void PrintDetailView(Student student);
         void GetAStudent(int viewId);
 
        

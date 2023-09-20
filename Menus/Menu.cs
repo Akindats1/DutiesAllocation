@@ -162,6 +162,13 @@ namespace DutiesAllocationApp.Menus
                         dutyService.Delete(dutyId);
                         Console.WriteLine("");
                         break;
+                    case "5":
+                        Console.WriteLine("");
+                        Console.Write("Enter the name of duty to view: ");
+                        string dutyName = Console.ReadLine();
+                        dutyService.GetDuty(dutyName);
+                        Console.WriteLine("");
+                        break;
                     case "0":
                         flag = false;
                         break;
@@ -250,6 +257,7 @@ namespace DutiesAllocationApp.Menus
             Console.WriteLine("Enter 2 to view all duty.");
             Console.WriteLine("Enter 3 to update duty.");
             Console.WriteLine("Enter 4 to delete duty.");
+            Console.WriteLine("Enter 5 to view a duty.");
             Console.WriteLine("Enter 0 to go back to main menu.");
         }
 

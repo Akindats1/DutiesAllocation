@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "r7/GQFrvAm/NDLgDBp16vOCgDMzPDfJhTBZrHPrOm0JjaqE0gOoF1WtIdI5AMTiczQF5tyiUVwI5MXMwhjue5w==",
+  "dgSpecHash": "22oEIA7Y6K8VmUyuKmslUDJp35xHovx66+3HzgLsh3yiRbZIfRIx3MtVIyLR5vH8PSNZoeGVEgrsc9fDuzFAVw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Videos\\DutiesAllocation\\DutiesAllocationApp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\BELLO\\Desktop\\FileBaseSystemDutyApp\\DutiesAllocation\\DutiesAllocationApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\BELLO\\.nuget\\packages\\consoletables\\2.4.2\\consoletables.2.4.2.nupkg.sha512",
+    "C:\\Users\\BELLO\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\BELLO\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\BELLO\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
+    "C:\\Users\\BELLO\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
+    "C:\\Users\\BELLO\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\BELLO\\.nuget\\packages\\system.reflection.typeextensions\\4.3.0\\system.reflection.typeextensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\BELLO\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\BELLO\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
+    "C:\\Users\\BELLO\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
+  ],
   "logs": []
 }

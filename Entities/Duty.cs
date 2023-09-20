@@ -1,3 +1,5 @@
+using ConsoleTables;
+
 namespace DutiesAllocationApp.Entities
 {
     public class Duty : BaseEntity
@@ -7,6 +9,7 @@ namespace DutiesAllocationApp.Entities
 
         public override string ToString()
         {
+            var table = new ConsoleTable("Id", "DutyName", "Description");
             return $"{Id}\t{DutyName}\t{Description}\t{CreatedAt}\t{ModifiedAt}";
         }
 

@@ -1,4 +1,5 @@
-﻿using DutiesAllocation.Entities.Dto;
+﻿using ConsoleTables;
+using DutiesAllocation.Entities.Dto;
 using DutiesAllocation.Repository;
 using DutiesAllocationApp.Entities;
 using DutiesAllocationApp.Repository;
@@ -76,32 +77,30 @@ namespace DutiesAllocationApp.Services
         public void GetAll()
         {
             var duties = dutyRepository.GetAll();
-
-            foreach (var duty in duties)
+            var table = new ConsoleTable("Id","Duty Name", "Description", "Created", "Modified");
+            if (duties.Count != 0)
             {
-                PrintListView(duty);
+                foreach (var duty in duties)
+                {
+                    table.AddRow(duty.Id, duty.DutyName, duty.Description, duty.CreatedAt, duty.ModifiedAt);
+                }
+
+                table.Write(Format.Alternative);
+                return;
             }
+
+            
         }
 
-        public void PrintListView(Duty duty)
+        public void GetDuty(string dutyname)
         {
-            var dateCreated = duty.CreatedAt.ToShortDateString();
-            string dateModified = String.Empty;
-
-            if (duty.ModifiedAt == new DateTime(0001, 01, 01))
+            var duty = dutyRepository.GetByName(dutyname);
+            var table = new ConsoleTable("Id", "Duty Name", "Description");
+            if (duty != null)
             {
-                dateModified += "Not modified yet";
+                table.AddRow(duty.Id, duty.DutyName, duty.Description);
+                table.Write(Format.Alternative);
             }
-            else if (duty.CreatedAt.ToShortDateString() == duty.ModifiedAt.ToShortDateString())
-            {
-                dateModified += duty.ModifiedAt.ToString("hh:mm tt");
-            }
-            else
-            {
-                dateModified += duty.ModifiedAt.ToShortDateString();
-            }
-
-            Console.WriteLine($"Duty Name: {duty.DutyName}\tDescription: {duty.Description}\tCreated: {dateCreated}\tModified: {dateModified}");
         }
 
         public void Update(int id, DutyDto request)
