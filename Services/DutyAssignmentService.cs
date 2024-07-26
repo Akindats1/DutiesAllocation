@@ -19,7 +19,6 @@ namespace DutiesAllocationApp.Services
             dutyRepository = new DutyRepository();
             studentRepository = new StudentRepository();
             dutyAssignmentRepository = new DutyAssignmentRepository();
-
         }
         public void AssignDutyTostudent(DutyAssignmentDto request)
         {
@@ -147,7 +146,7 @@ namespace DutiesAllocationApp.Services
                 table.Write(Format.Alternative);
                 return;
             }
-            
+
         }
 
         public void ViewDutyToAStudent(string dutyName)
